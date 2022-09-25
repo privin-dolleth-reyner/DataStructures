@@ -13,8 +13,12 @@ private fun checkDynamicArrayImpl(){
     list.add(5)
     list[1] = 8
     list.remove(4)
-    for (i in 0 until list.size){
-        print(list[i])
+    list.forEach {
+        print(it)
+    }
+    println()
+    list.forEach {
+        print(it)
     }
     println()
     println("ArrayItem: ${list[1]}")

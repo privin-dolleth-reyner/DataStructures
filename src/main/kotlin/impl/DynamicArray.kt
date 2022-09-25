@@ -1,12 +1,14 @@
 package impl
 
-class DynamicArray constructor(initialCapacity: Int = 1) {
+class DynamicArray constructor(initialCapacity: Int = 1): Iterator<Int> {
 
     var capacity: Int = initialCapacity
         private set
 
     var size = 0
         private set
+
+    private var iteratorIndex = 0
 
     private var arr: IntArray = IntArray(initialCapacity)
 
@@ -44,6 +46,22 @@ class DynamicArray constructor(initialCapacity: Int = 1) {
         }else{
             throw IllegalStateException("Index not within bounds")
         }
+    }
+
+    operator fun iterator(){
+        arr.iterator()
+    }
+
+    override fun hasNext(): Boolean {
+        if (iteratorIndex >= size) {
+            iteratorIndex = 0
+            return false
+        }
+        return true
+    }
+
+    override fun next(): Int {
+        return arr[iteratorIndex++]
     }
 
 }
