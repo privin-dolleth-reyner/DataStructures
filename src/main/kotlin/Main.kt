@@ -1,7 +1,8 @@
 import impl.DynamicArray
+import impl.LinkedList
 
-fun main(args: Array<String>) {
-    checkDynamicArrayImpl()
+fun main() {
+    checkLinkedListImpl()
 }
 
 private fun checkDynamicArrayImpl(){
@@ -22,4 +23,17 @@ private fun checkDynamicArrayImpl(){
     }
     println()
     println("ArrayItem: ${list[1]}")
+}
+
+private fun checkLinkedListImpl(){
+    val list = LinkedList(LinkedList.Companion.Node(1))
+    list.push(2)
+    list.push(3)
+    list.push(4)
+    list.push(5)
+    list.remove(3)
+    list.print()
+    println()
+    println(list.pop())
+    list.print()
 }
