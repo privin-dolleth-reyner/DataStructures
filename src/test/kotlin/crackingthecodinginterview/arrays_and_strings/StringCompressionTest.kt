@@ -16,7 +16,7 @@ class StringCompressionTest{
     @Test
     fun testCompression1(){
         val str = stringCompression.execute("abcd")
-        assertEquals("a1b1c1d1", str)
+        assertEquals("abcd", str)
     }
     
 
