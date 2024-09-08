@@ -1,12 +1,13 @@
 package sorting
 
-fun main() {
+private fun main() {
     val arr = intArrayOf(7,3,2,6,1,5)
+
+    val list = makeList(arr)
+
     bubbleSort(arr)
 
     println()
-
-    val list = makeList(arr)
 
     list.sort()
     var temp = list.head
@@ -32,7 +33,7 @@ fun bubbleSort(array: IntArray){
     println(array.joinToString())
 }
 
-fun makeList(array: IntArray): LKList {
+private fun makeList(array: IntArray): LKList {
     val linkedList = LKList()
     for (n in array){
         linkedList.insertAtEnd(n)
@@ -41,8 +42,9 @@ fun makeList(array: IntArray): LKList {
     return linkedList
 }
 
-data class ListNode(var value: Int, var next: ListNode? = null)
-class LKList(root: ListNode? = null){
+private class LKList(root: ListNode? = null){
+
+    data class ListNode(var value: Int, var next: ListNode? = null)
 
     var head: ListNode? = root
         private set
