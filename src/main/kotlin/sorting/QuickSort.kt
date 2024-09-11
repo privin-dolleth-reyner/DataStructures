@@ -132,10 +132,11 @@ private class QLkList(root: ListNode? = null){
             }
             temp?.next = null
             quickSort(newHead, temp).also {
-                while (temp?.next != null){
-                    temp = temp!!.next
+                var tmp = it
+                while (tmp?.next != null){
+                    tmp = tmp.next
                 }
-                temp?.next = newPivot
+                tmp?.next = newPivot
             }
         }else newPivot
 
